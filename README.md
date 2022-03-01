@@ -1,3 +1,5 @@
+![chrome](chrome.png)
+
 # Basic setup
 My go to setup & dependencies for my arch setup! This is still a work in progress to get everything fine tuned, and most of the config composed of small tweaks to default configs or config parts referenced from the internet.
 
