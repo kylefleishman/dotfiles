@@ -11,4 +11,4 @@ My go to setup & dependencies for my Arch setup! This is still a work in progres
 **Terminal:** Alacritty <br>
 
 # Dependencies
-'i3-gaps alacritty picom rofi nitrogen lightdm'
+`i3-gaps alacritty picom rofi nitrogen lightdm`
