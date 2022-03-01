@@ -1,0 +1,107 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+
+
+
+[colors]
+background = #90282a36
+background-alt = #caa9fa
+foreground = #f8f8f2
+foreground-alt = #90282a36
+alert = #ff5555
+
+
+
+[bar/polybar]
+width = 100%
+height = 32
+radius = 16
+border-size = 10
+border-bottom = 0
+
+bottom = false
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = "Azuki:size=10;3"
+font-1 = "Azuki:size=14;4"
+
+modules-left = i3
+modules-center = time
+modules-right = pulseaudio memory cpu date
+
+padding-right = 5
+module-margin-right = 5
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+
+padding = 3
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.foreground-alt}
+label-focused-padding = ${self.padding}
+
+label-unfocused = %index%
+label-unfocused-padding = ${self.padding}
+
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = ${self.padding}
+
+
+
+[module/date]
+type = internal/date
+format-prefix = "𞋸  "
+date = "%a, %b %d %Y"
+
+
+
+[module/time]
+type = internal/date
+format-prefix = "  "
+date = "%H:%M:%S"
+
+
+
+[module/memory]
+type = internal/memory
+
+
+
+
+[module/cpu]
+type = internal/cpu
+format-prefix = "  "
+
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = false
+
+format-volume = <label-volume>
+label-volume = "墳  %percentage%%"
+
+label-muted = "婢  ..."
+label-muted-foreground = ${colors.foreground-alt}
